@@ -284,15 +284,16 @@
   .direct-btn small{ display:block; font-weight:500; color:var(--cream-300); font-size:.74rem; margin-top:2px; }
 
   .booking-form{ position:relative; z-index:2; background:var(--white); border-radius:20px; padding:clamp(20px,3vw,38px); box-shadow:var(--shadow-md); min-width:0; }
-  .form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px 18px; }
+  .form-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:16px 18px; }
   .field{ display:flex; flex-direction:column; gap:6px; min-width:0; }
   .field.full{ grid-column:1/-1; }
   .field label{ font-size:.74rem; font-weight:800; letter-spacing:.03em; text-transform:uppercase; color:var(--maroon-800); }
   .field input, .field select, .field textarea{
     padding:12px 14px; border-radius:10px; border:1.5px solid var(--cream-300); background:var(--cream-100);
     font-family:'Nunito Sans',sans-serif; font-size:.92rem; color:var(--ink-900); transition:border-color .25s, box-shadow .25s;
-    width:100%;
+    width:100%; min-width:0; max-width:100%;
   }
+  .field input[type="date"], .field input[type="time"]{ -webkit-appearance:none; appearance:none; }
   .field input:focus, .field select:focus, .field textarea:focus{
     outline:none; border-color:var(--gold-500); box-shadow:0 0 0 4px rgba(201,162,75,.16); background:var(--white);
   }
